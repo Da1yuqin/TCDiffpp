@@ -1,4 +1,4 @@
-# TCDiffpp
+# TCDiff++
 This is the official code for our paper: "TCDiff++: An End-to-end Trajectory-Controllable Diffusion Model for Harmonious Music-Driven Group Choreography". 
 
 The code is being released soon!
