@@ -12,6 +12,12 @@ Our end-to-end TCDiff++ framework comprises two key components: the Group Dance 
 
 # Citation
 ```
+@article{dai2025tcdiff++,
+  title={TCDiff++: An End-to-end Trajectory-Controllable Diffusion Model for Harmonious Music-Driven Group Choreography},
+  author={Dai, Yuqin and Zhu, Wanlu and Li, Ronghui and Li, Xiu and Zhang, Zhenyu and Li, Jun and Yang, Jian},
+  journal={arXiv preprint arXiv:2506.18671},
+  year={2025}
+}
 @article{dai2024harmonious,
   title={Harmonious Group Choreography with Trajectory-Controllable Diffusion},
   author={Dai, Yuqin and Zhu, Wanlu and Li, Ronghui and Ren, Zeping and Zhou, Xiangzheng and Li, Xiu and Li, Jun and Yang, Jian},
