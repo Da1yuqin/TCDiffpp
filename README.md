@@ -26,17 +26,10 @@ Code for our paper "TCDiff++: An End-to-end Trajectory-Controllable Diffusion Mo
 </p>
 
 
-## 📌 TODO List
-🥳 We plan to open source the following parts in September:
-
-- [ ] Data Preprocess  
-- [ ] Train    
-- [ ] Long Generation  
-- [ ] Blender Visualization  
 
 
 
-<!-- ## Environment Setup
+## Environment Setup
 
 * To set up the environment, follow these steps:
 
@@ -89,19 +82,21 @@ python create_dataset.py
 # Training
 To train the model, use the following command:
 
-    accelerate launch train.py
+    accelerate launch train.py --use_ssm True
+💡 Note: If you encounter difficulties setting up the mamba environment, you can set --use_ssm False. This will switch to the Transformer-based framework and remove the dependency on mamba-ssm.
 
 
 # Generate results
 To generate results using the trained model, run:
 
-    python train.py --mode "val" 
+    python train.py --mode "val" --use_ssm True
+💡 Note: Similarly, if the mamba environment is hard to configure, you can set --use_ssm False to avoid relying on SSM.
 
 # Long group dance generation
 To perform Long-duration generation, execute:
 
-    python long_generation.py --required_dancer_num 4 --genre Electronic 
- 
+    python long_generation.py --required_dancer_num 4 --genre Electronic --use_ssm True
+💡 Note: The --use_ssm setting should be kept consistent with the configuration you used during training. If you had to disable SSM due to environment issues, make sure to set --use_ssm False here as well.
 
 # Visulization in Blender
 We developed automated scripts to transform the generated SMPL motion data into beautiful 3D animations rendered in Blender, replicating the high-quality visuals featured on our project page. The entire rendering pipeline, from data preparation to Blender rendering, is fully scripted for ease of use and reproducibility. For detailed steps, please refer to the `Blender_Visulization/` Rendering Pipeline documentation.  ✨ Your star is the greatest encouragement for our work. ✨
@@ -110,7 +105,7 @@ We developed automated scripts to transform the generated SMPL motion data into 
 
 ## Acknowledgment
 The concept of TCDiff is inspired by solo-dancer generation model [EDGE](https://github.com/Stanford-TML/EDGE) and [Mamba](https://github.com/state-spaces/mamba).
-We sincerely appreciate the efforts of these teams for their contributions to open-source research and development. -->
+We sincerely appreciate the efforts of these teams for their contributions to open-source research and development.
 
 # Citation
 ```
