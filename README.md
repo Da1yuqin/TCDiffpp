@@ -25,7 +25,16 @@ Code for our paper "TCDiff++: An End-to-end Trajectory-Controllable Diffusion Mo
   </a>
 </p>
 
-
+## 🔥 News
+- **2025.09.29** 🎉 Our work **TCDiff++** has been officially accepted by **IJCV 2025**!  
+- **2025.09.28** 🚀 We have released the **TCDiff++ codebase**. The open-source implementation provides:  
+  - End-to-end **trajectory-controllable diffusion framework** for group choreography.  
+  - Support for both **Mamba-SSM** and **Transformer-based** backbones (via `--use_ssm` option).  
+  - Scripts for **data preprocessing** on [AIOZ-GDance](https://github.com/aioz-ai/AIOZ-GDANCE).  
+  - Training and evaluation pipelines with **long-duration group dance generation**.  
+  - Automated **Blender visualization pipeline** for rendering high-quality 3D animations.  
+- **2025.06** 📄 The preprint of **TCDiff++** is available on [arXiv](https://arxiv.org/pdf/2506.18671).  
+- **2024.03** 🪄 Our previous work **[TCDiff](https://wanluzhu.github.io/TCDiffusion/)** was released, pioneering trajectory-controllable diffusion for harmonious group choreography and laying the foundation for TCDiff++.  
 
 
 
