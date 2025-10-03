@@ -124,10 +124,13 @@ We sincerely appreciate the efforts of these teams for their contributions to op
   journal={arXiv preprint arXiv:2506.18671},
   year={2025}
 }
-@article{dai2024harmonious,
-  title={Harmonious Group Choreography with Trajectory-Controllable Diffusion},
-  author={Dai, Yuqin and Zhu, Wanlu and Li, Ronghui and Ren, Zeping and Zhou, Xiangzheng and Li, Xiu and Li, Jun and Yang, Jian},
-  journal={arXiv preprint arXiv:2403.06189},
-  year={2024}
+@inproceedings{dai2025harmonious,
+  title={Harmonious Music-driven Group Choreography with Trajectory-Controllable Diffusion},
+  author={Dai, Yuqin and Zhu, Wanlu and Li, Ronghui and Ren, Zeping and Zhou, Xiangzheng and Ying, Jixuan and Li, Jun and Yang, Jian},
+  booktitle={Proceedings of the AAAI Conference on Artificial Intelligence},
+  volume={39},
+  number={3},
+  pages={2645--2653},
+  year={2025}
 }
 ```
