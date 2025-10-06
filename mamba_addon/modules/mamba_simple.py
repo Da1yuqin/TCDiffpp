@@ -48,6 +48,41 @@ def featurewise_affine(x, scale_shift):
     scale, shift = scale_shift
     return (scale + 1) * x + shift
 
+class LinearTemporalCrossAttentionMamba(nn.Module):
+
+    def __init__(self, seq_len, latent_dim, cond_latent_dim, num_head, dropout, time_embed_dim):
+        super().__init__()
+        self.num_head = num_head
+        self.norm = nn.LayerNorm(latent_dim)
+        self.text_norm = nn.LayerNorm(cond_latent_dim)
+        self.query = nn.Linear(latent_dim, latent_dim)
+        self.key = nn.Linear(cond_latent_dim, latent_dim)
+        self.value = nn.Linear(cond_latent_dim, latent_dim)
+        self.dropout = nn.Dropout(dropout)
+    
+    def forward(self, x, xf):
+        """
+        x: B, T, D
+        xf: B, N, L
+        """
+        B, T, D = x.shape
+        N = xf.shape[1]
+        H = self.num_head
+        # B, T, D
+        query = self.query(self.norm(x))
+        # B, N, D
+        key = self.key(self.text_norm(xf))     
+        query = F.softmax(query.view(B, T, H, -1), dim=-1)
+        key = F.softmax(key.view(B, N, H, -1), dim=1)
+        # B, N, H, HD
+        value = self.value(self.text_norm(xf)).view(B, N, H, -1)   
+        # B, H, HD, HD
+        attention = torch.einsum('bnhd,bnhl->bhdl', key, value)
+        y = torch.einsum('bnhd,bhdl->bnhl', query, attention).reshape(B, T, D)
+        # y = x + self.proj_out(y, emb)
+        return y
+
+
 class CrossMamba(nn.Module):
     def __init__(
         self,

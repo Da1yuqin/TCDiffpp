@@ -400,6 +400,7 @@ class FiLMMambaDecoderLayer(nn.Module):
         self.self_attn = nn.MultiheadAttention(
             d_model, nhead, dropout=dropout, batch_first=batch_first
         )
+        from mamba_addon import CrossMamba
         self.mamba = CrossMamba(d_model = d_model)
         self.multihead_attn = nn.MultiheadAttention(
             d_model, nhead, dropout=dropout, batch_first=batch_first
@@ -597,7 +598,6 @@ class DanceDecoder(nn.Module):
         decoderstack = nn.ModuleList([])
 
         if use_ssm:
-            from mamba_addon import CrossMamba
             for _ in range(num_layers):
                 decoderstack.append(
                     FiLMMambaDecoderLayer( 
