@@ -26,7 +26,7 @@ Code for our paper "TCDiff++: An End-to-end Trajectory-Controllable Diffusion Mo
 </p>
 
 ## 🔥 News
-% - **2025.09.29** 🎉 Our work **TCDiff++** has been officially accepted by **IJCV 2025**!  
+<!-- - **2025.09.29** 🎉 Our work **TCDiff++** has been officially accepted by **IJCV 2025**! -->
 - **2025.09.28** 🚀 We have released the **TCDiff++ codebase**. The open-source implementation provides:  
   - End-to-end **trajectory-controllable diffusion framework** for group choreography.  
   - Support for both **Mamba-SSM** and **Transformer-based** backbones (via `--use_ssm` option).  
