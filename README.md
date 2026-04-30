@@ -40,7 +40,7 @@ Code for our paper "TCDiff++: An End-to-end Trajectory-Controllable Diffusion Mo
 
 ## Environment Setup
 
-* To set up the environment, follow these steps:
+* To set up the environment, our environment follows [EDGE](https://github.com/stanford-tml/edge), and is configured on top of it as follows:
 
 ```bash
 # Create a new conda environment
@@ -60,7 +60,6 @@ conda install -c fvcore -c iopath -c conda-forge fvcore iopath
 conda install pytorch3d
 
 # Install remaining requirements
-pip install -r requirements.txt
 pip install accelerate 
 pip install librosa 
 pip install matplotlib
